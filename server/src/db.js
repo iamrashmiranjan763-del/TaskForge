@@ -1,6 +1,6 @@
 import Database from "better-sqlite3";
-
-const db = new Database("taskforge.db");
+const dbPath = process.env.DATABASE_PATH || "taskforge.db";
+const db = new Database(dbPath);
 db.pragma("journal_mode = WAL");
 
 db.exec(`
