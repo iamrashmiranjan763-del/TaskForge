@@ -1,6 +1,11 @@
 # TaskForge
 
 A full-stack task and productivity manager built with React, Node.js, Express, and SQLite.
+## Live Demo
+
+🚀 **Live Application:** https://spectacular-light-production-ee13.up.railway.app
+
+TaskForge is deployed on Railway with separate frontend and backend services. The SQLite database uses persistent storage so task data is retained across deployments.
 
 ## Features
 - Create, edit, and delete tasks
@@ -19,6 +24,30 @@ A full-stack task and productivity manager built with React, Node.js, Express, a
 - Backend: Node.js + Express
 - Database: SQLite via better-sqlite3
 - Security: Helmet, CORS, express-rate-limit
+
+## Architecture
+
+TaskForge follows a simple full-stack client-server architecture:
+
+- **React + Vite** provides the user interface.
+- **Express.js** exposes REST API endpoints for task operations.
+- **SQLite** stores task information persistently.
+- The frontend communicates with the backend using the Fetch API.
+- **CORS, Helmet, and rate limiting** provide basic API security.
+- The application is deployed on **Railway**, with persistent storage for the SQLite database.
+
+`Frontend → REST API → Express Backend → SQLite Database`
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/health` | Check API health |
+| GET | `/api/tasks` | Retrieve tasks |
+| POST | `/api/tasks` | Create a new task |
+| PUT | `/api/tasks/:id` | Update an existing task |
+| DELETE | `/api/tasks/:id` | Delete a task |
+| GET | `/api/stats` | Retrieve dashboard statistics |
 
 ## Project Structure
 ```text
@@ -54,7 +83,8 @@ Frontend runs on `http://localhost:5173`.
 
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | /api/tasks | List tasks |
+| GET | /api/health | Check API health |
+| GET | /api/tasks | Retrieve tasks |
 | POST | /api/tasks | Create task |
 | PUT | /api/tasks/:id | Update task |
 | DELETE | /api/tasks/:id | Delete task |
@@ -74,4 +104,4 @@ React, Node.js, Express, SQLite
 - Kanban drag-and-drop
 - Automated tests
 - PostgreSQL migration
-- Deployment
+
