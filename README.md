@@ -19,6 +19,16 @@ TaskForge is deployed on Railway with separate frontend and backend services. Th
 - Basic security middleware and rate limiting
 - Responsive UI
 
+## Application Preview
+
+### Dashboard & Task Creation
+
+![TaskForge Dashboard](Screenshot%202026-08-30%20153336.png)
+
+### Task Management & Filtering
+
+![TaskForge Task Management](Screenshot%202026-08-30%20153452.png)
+
 ## Tech Stack
 - Frontend: React + Vite
 - Backend: Node.js + Express
